@@ -142,7 +142,7 @@ const AboutPage = () => {
                 Subhash Wangde completed his engineering degree from Mumbai University. He worked for 22 years in senior corporate management roles before giving up his lucrative career to follow his true passion: making a tangible difference in people's lives.
               </p>
               <p style={{ fontSize: '0.95rem', color: '#475569', lineHeight: 1.7, marginBottom: '20px' }}>
-                Above all, he has been personally trained by America’s leading Success Coach, <strong>Mr. Jack Canfield</strong> (co-author of *Chicken Soup for the Soul* and *The Success Principles*). He conducts public workshops, corporate training, motivational talks, and DMIT family counseling.
+                Above all, he has been personally trained by America’s leading Success Coach, <strong>Mr. Jack Canfield</strong> (co-author of <em>Chicken Soup for the Soul</em> and <em>The Success Principles</em>). He conducts public workshops, corporate training, motivational talks, and DMIT family counseling.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>

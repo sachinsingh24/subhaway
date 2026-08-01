@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import PageBanner from "../components/PageBanner";
 import pageBanners from "../data/pageBanners";
 import blogPosts, { formatBlogDate } from "../data/blogPosts";
+import MarkdownContent from "../components/MarkdownContent";
 
 const BlogPage = () => {
   const [selectedPost, setSelectedPost] = useState(null);
@@ -59,16 +60,14 @@ const BlogPage = () => {
                 </span>
               </div>
 
-              <div
+              <MarkdownContent
+                text={selectedPost.content}
                 style={{
                   fontSize: "1rem",
                   color: "#334155",
                   lineHeight: 1.8,
-                  whiteSpace: "pre-line",
                 }}
-              >
-                {selectedPost.content}
-              </div>
+              />
 
               <div style={{ marginTop: "40px", paddingTop: "24px", borderTop: "1px solid #e2e8f0" }}>
                 <Link to="/contact" className="btn-primary">
