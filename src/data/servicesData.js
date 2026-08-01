@@ -8,9 +8,9 @@ const servicesData = [
   {
     id: 'mind-power',
     path: '/services/mind-power',
-    navLabel: 'Mind Power Unlimited for Public',
-    title: 'Mind Power Unlimited for Public',
-    shortTitle: 'Mind Power Unlimited for Public',
+    navLabel: 'Mind Power Unlimited For Publick for Public',
+    title: 'Mind Power Unlimited For Publick for Public',
+    shortTitle: 'Mind Power Unlimited For Publick for Public',
     icon: BookOpen,
     category: 'Public Workshop',
     accentColor: '#0ea5e9',
@@ -18,10 +18,10 @@ const servicesData = [
     imageAlt: 'Workshop photo representing mind power coaching and mindset transformation',
     heroLabel: 'For growth-minded professionals and families',
     homeSummary:
-      'A transformational public workshop that blends subconscious reprogramming, Alpha state work, and practical goal setting for life and business.',
+      'An immersive public workshop that blends subconscious reprogramming, Alpha state work, and practical goal setting for life and business.',
     audience:
       'Business owners, solopreneurs, professionals, homemakers, students, and senior citizens who want faster progress with greater clarity.',
-    duration: '2-day immersive workshop',
+    duration: 'Immersive success workshop',
   },
   {
     id: 'super-student',
@@ -39,7 +39,7 @@ const servicesData = [
       'A student-centered workshop built to improve concentration, memory, emotional balance, and goal clarity in an increasingly distracted world.',
     audience:
       'School students, college students, competitive exam aspirants, and parents seeking structured support for academic growth.',
-    duration: '2-day experiential student workshop',
+    duration: 'Experiential student workshop',
   },
   {
     id: 'corporate-power',
@@ -57,7 +57,7 @@ const servicesData = [
       'A corporate performance program that aligns people, sharpens decision-making, and improves resilience, innovation, and collaboration.',
     audience:
       'Corporate leaders, managers, HR teams, sales professionals, and enterprise organizations looking for stronger performance culture.',
-    duration: 'Custom 1-day or 2-day corporate intervention',
+    duration: 'Customized corporate performance intervention',
   },
   {
     id: 'stress-free',
@@ -75,7 +75,7 @@ const servicesData = [
       'A practical wellness workshop focused on stress release, better energy, emotional balance, and supportive daily rituals.',
     audience:
       'Working professionals, homemakers, senior executives, and anyone dealing with chronic pressure, fatigue, or emotional overload.',
-    duration: '1-day workshop or focused seminar',
+    duration: 'Focused wellness workshop',
   },
   {
     id: 'dmit-counselling',

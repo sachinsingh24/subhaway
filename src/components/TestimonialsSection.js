@@ -5,10 +5,10 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       quote:
-        'Attending the Mind Power Unlimited workshop transformed how I run my business. In just 6 months, I doubled my revenue while freeing up my weekends to spend with family. Mr. Subhash’s EFT techniques are miraculous!',
+        'Attending the Mind Power Unlimited For Publick workshop transformed how I run my business. In just 6 months, I doubled my revenue while freeing up my weekends to spend with family. Mr. Subhash’s EFT techniques are miraculous!',
       name: 'Rajesh Sharma',
       role: 'Manufacturing Business Owner',
-      program: 'Mind Power Unlimited',
+      program: 'Mind Power Unlimited For Publick',
     },
     {
       quote:

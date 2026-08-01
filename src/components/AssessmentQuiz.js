@@ -11,8 +11,8 @@ const AssessmentQuiz = ({ onSelectProgram }) => {
       options: [
         {
           label: 'I want to double my business revenue and free up personal time',
-          program: 'Mind Power Unlimited for Public',
-          desc: 'Our Mind Power Unlimited workshop is tailor-made for Business Owners & Solopreneurs to clear limiting beliefs and scale income.',
+          program: 'Mind Power Unlimited For Publick for Public',
+          desc: 'Our Mind Power Unlimited For Publick workshop is tailor-made for Business Owners & Solopreneurs to clear limiting beliefs and scale income.',
         },
         {
           label: 'My child needs better focus, memory, exam confidence & career clarity',

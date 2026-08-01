@@ -12,7 +12,7 @@ const ProgramsSection = ({ onSelectProgram }) => {
       category: 'Mind Power',
       icon: BookOpen,
       iconColor: '#00b4d8',
-      title: 'Mind Power Unlimited for Public',
+      title: 'Mind Power Unlimited For Publick for Public',
       subtitle: 'Blueprint for Success in Personal & Professional Life',
       audience: 'Business People, Solopreneurs, Professionals, Housewives, Senior Citizens',
       duration: '2 Days Transformational Workshop',

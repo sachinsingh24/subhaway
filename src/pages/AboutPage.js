@@ -136,7 +136,7 @@ const AboutPage = () => {
                 Subhash Wangde
               </h3>
               <p style={{ color: '#95346b', fontWeight: 600, fontSize: '0.95rem', marginBottom: '16px' }}>
-                Electronics & Telecommunication Engineer | Author | Mind Expert
+                Certified Mind Power Trainer | Key-note Speaker | Author
               </p>
               <p style={{ fontSize: '0.95rem', color: '#475569', lineHeight: 1.7, marginBottom: '16px' }}>
                 Subhash Wangde completed his engineering degree from Mumbai University. He worked for 22 years in senior corporate management roles before giving up his lucrative career to follow his true passion: making a tangible difference in people's lives.

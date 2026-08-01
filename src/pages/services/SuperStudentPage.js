@@ -81,7 +81,7 @@ const SuperStudentPage = () => {
             Unleash the power within — and become <span style={{ color: '#c4b5fd' }}>unstoppable</span>
           </h1>
           <p style={{ color: '#e0e7ff', fontSize: '1.1rem', lineHeight: 1.8, maxWidth: '720px', margin: '0 auto 30px' }}>
-            A 2-day experiential workshop that empowers students to break through barriers, sharpen focus and confidently
+            An immersive workshop that empowers students to break through barriers, sharpen focus and confidently
             answer the one question school never teaches: <em>“What do I really want?”</em>
           </p>
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -156,7 +156,7 @@ const SuperStudentPage = () => {
         <div className="container" style={{ textAlign: 'center', maxWidth: '860px' }}>
           <Brain size={34} style={{ marginBottom: '14px', opacity: 0.9 }} />
           <p style={{ fontSize: '1.5rem', lineHeight: 1.5, fontWeight: 600, color: '#ffffff' }}>
-            “This 2-day workshop brings about a change at a cellular level — so the results are permanent.”
+            “This workshop brings about a change at a cellular level — so the results are permanent.”
           </p>
           <p style={{ marginTop: '14px', color: '#ddd6fe', fontSize: '0.95rem' }}>Every child is unique and born a genius.</p>
         </div>

@@ -1,7 +1,7 @@
-export const defaultContactProgram = 'Mind Power Unlimited for Public';
+export const defaultContactProgram = 'Mind Power Unlimited For Publick for Public';
 
 export const contactPrograms = [
-  'Mind Power Unlimited for Public',
+  'Mind Power Unlimited For Publick for Public',
   'Super Student Unlimited',
   'Unleash the Power Within for Corporates',
   'Stress Free Living Workshop',

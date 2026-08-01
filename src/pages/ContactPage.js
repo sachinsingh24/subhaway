@@ -27,7 +27,7 @@ const ContactPage = () => {
       a: 'You can submit the contact form on this page or call/WhatsApp us directly at +91 7875506912. Our academy team will provide available dates and registration details.',
     },
     {
-      q: 'Who should attend the Mind Power Unlimited workshop?',
+      q: 'Who should attend the Mind Power Unlimited For Publick workshop?',
       a: 'Business Owners, Solopreneurs, Corporate Professionals, Housewives, Students, and Senior Citizens who wish to remove limiting beliefs and achieve peak success.',
     },
     {
@@ -36,7 +36,7 @@ const ContactPage = () => {
     },
     {
       q: 'Do you conduct corporate training sessions on-site at client premises?',
-      a: 'Yes, Mr. Subhash Wangde conducts 1-day or 2-day corporate workshops ("Unleash the Power Within") customized for leadership and sales teams on-site across India.',
+      a: 'Yes, Mr. Subhash Wangde conducts high-impact corporate workshops ("Unleash the Power Within") customized for leadership and sales teams on-site across India.',
     },
   ];
   return (

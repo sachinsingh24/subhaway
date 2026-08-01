@@ -20,7 +20,7 @@ const ContactSection = ({ selectedProgramFromState }) => {
 
   const faqs = [
     {
-      q: 'Who can attend the Mind Power Unlimited workshop?',
+      q: 'Who can attend the Mind Power Unlimited For Publick workshop?',
       a: 'Business People, Solopreneurs, Corporate Professionals, Housewives, Students, and Senior Citizens. Anyone who wants to achieve peak performance, eliminate stress, and double their success.',
     },
     {
@@ -33,7 +33,7 @@ const ContactSection = ({ selectedProgramFromState }) => {
     },
     {
       q: 'How does Mr. Subhash Wangde coach corporate teams?',
-      a: 'Through customized 1-day or 2-day workshops ("Unleash the Power Within"), focusing on employee alignment, sales mastery, leadership decision making, and stress elimination.',
+      a: 'Through customized corporate workshops ("Unleash the Power Within"), focusing on employee alignment, sales mastery, leadership decision making, and stress elimination.',
     },
   ];
   return (

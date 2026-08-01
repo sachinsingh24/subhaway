@@ -31,23 +31,23 @@ const wishlist = [
 
 const principles = [
   {
-    title: 'Understand the mind',
+    title: 'Understand The Mind',
     text: 'Detailed explanation of how the mind works, the types of minds and the powers of the subconscious mind.',
   },
   {
-    title: 'Design life on purpose',
+    title: 'Identify Your Life Purpose',
     text: 'Identify your life purpose and set balanced, SMART goals across every area of your life.',
   },
   {
-    title: 'Program the subconscious',
+    title: 'Program The Subconscious Mind',
     text: 'Alpha-state mind programming, visualisation, auto-suggestions, mind movies and vision boards.',
   },
   {
-    title: 'Clear the blockages',
+    title: 'Clear The Blockages',
     text: 'Use Emotional Freedom Technique (EFT) to rewire the brain and remove emotional and physical blocks.',
   },
   {
-    title: 'Protect and attract',
+    title: 'Protect And Attract',
     text: 'Negativity removal, a psychic shield for protection, and attracting the right people and opportunities.',
   },
 ];
@@ -105,10 +105,10 @@ const MindPowerPage = () => {
                 textTransform: 'uppercase',
               }}
             >
-              <Brain size={15} /> Mind Power Unlimited · Public Workshop
+              <Brain size={15} /> Mind Power Unlimited For Public
             </span>
             <h1 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.4rem)', lineHeight: 1.1, margin: '18px 0 16px', color: DEEP }}>
-              Build your complete{' '}
+              Build Your Complete{' '}
               <span
                 style={{
                   background: `linear-gradient(90deg, ${SKY}, #22d3ee)`,
@@ -116,7 +116,7 @@ const MindPowerPage = () => {
                   WebkitTextFillColor: 'transparent',
                 }}
               >
-                Blueprint for Success
+                Blueprint For Success
               </span>
             </h1>
             <p style={{ fontSize: '1.08rem', color: '#334155', lineHeight: 1.8, maxWidth: '560px' }}>
@@ -352,7 +352,7 @@ const MindPowerPage = () => {
             <Clock size={30} style={{ marginBottom: '12px' }} />
             <h3 style={{ color: '#ffffff', fontSize: '1.5rem', marginBottom: '10px' }}>Ready to write your blueprint?</h3>
             <p style={{ color: '#e0f2fe', lineHeight: 1.7, marginBottom: '22px' }}>
-              Join the next 2-day Mind Power Unlimited workshop and create a measurable internal shift.
+              Join the next 2-day Mind Power Unlimited For Publick workshop and create a measurable internal shift.
             </p>
             <Link
               to="/contact"
