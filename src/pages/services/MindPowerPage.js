@@ -120,7 +120,7 @@ const MindPowerPage = () => {
               </span>
             </h1>
             <p style={{ fontSize: '1.08rem', color: '#334155', lineHeight: 1.8, maxWidth: '560px' }}>
-              A transformational 2-day workshop that teaches timeless success principles and subconscious mind
+              A transformational Transformation workshop that teaches timeless success principles and subconscious mind
               techniques to take you from wherever you are now to wherever you want to be — faster than ever before.
             </p>
             <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '28px' }}>
@@ -242,7 +242,7 @@ const MindPowerPage = () => {
       <section className="section">
         <div className="container">
           <div className="section-title">
-            <h2 style={{ color: DEEP }}>Your 2-day journey</h2>
+            <h2 style={{ color: DEEP }}>Your Transformation journey</h2>
             <p>A step-by-step system that shatters limiting beliefs and makes you unstoppable.</p>
           </div>
           <div style={{ display: 'grid', gap: '16px', maxWidth: '860px', margin: '0 auto' }}>
@@ -352,7 +352,7 @@ const MindPowerPage = () => {
             <Clock size={30} style={{ marginBottom: '12px' }} />
             <h3 style={{ color: '#ffffff', fontSize: '1.5rem', marginBottom: '10px' }}>Ready to write your blueprint?</h3>
             <p style={{ color: '#e0f2fe', lineHeight: 1.7, marginBottom: '22px' }}>
-              Join the next 2-day Mind Power Unlimited For Publick workshop and create a measurable internal shift.
+              Join the next Transformation Mind Power Unlimited For Publick workshop and create a measurable internal shift.
             </p>
             <Link
               to="/contact"
