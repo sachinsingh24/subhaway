@@ -75,10 +75,10 @@ const SuperStudentPage = () => {
               textTransform: 'uppercase',
             }}
           >
-            <GraduationCap size={15} /> Super Student Unlimited
+            <GraduationCap size={15} /> Super Student Unlimited For Students
           </span>
           <h1 style={{ color: '#ffffff', fontSize: 'clamp(2.3rem, 4.5vw, 3.6rem)', lineHeight: 1.1, margin: '20px auto 16px', maxWidth: '900px' }}>
-            Unleash the power within — and become <span style={{ color: '#c4b5fd' }}>unstoppable</span>
+            Unlock Your Full Potential — And Become <span style={{ color: '#c4b5fd' }}>Unstoppable</span>
           </h1>
           <p style={{ color: '#e0e7ff', fontSize: '1.1rem', lineHeight: 1.8, maxWidth: '720px', margin: '0 auto 30px' }}>
             An immersive workshop that empowers students to break through barriers, sharpen focus and confidently

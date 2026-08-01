@@ -71,7 +71,7 @@ const StressFreePage = () => {
                 textTransform: 'uppercase',
               }}
             >
-              <Leaf size={15} /> Health & Wellness
+              <Leaf size={15} /> Stress Free Living Workshop
             </span>
             <h1 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.4rem)', lineHeight: 1.12, color: DEEP, margin: '18px 0 16px' }}>
               A calmer mind, a{' '}

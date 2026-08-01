@@ -80,10 +80,10 @@ const CorporatePowerPage = () => {
               textTransform: 'uppercase',
             }}
           >
-            <Building2 size={15} /> Corporate Training
+            <Building2 size={15} /> Corporate Workshop
           </span>
           <h1 style={{ color: '#ffffff', fontSize: 'clamp(2.3rem, 4.6vw, 3.6rem)', lineHeight: 1.1, margin: '20px 0 16px', maxWidth: '760px' }}>
-            Unleash the Power Within your organisation
+            Unleash the Power Within — For your organisation
           </h1>
           <p style={{ color: '#cbd5e1', fontSize: '1.08rem', lineHeight: 1.8, maxWidth: '620px' }}>
             A customised intervention that aligns people to your vision, sharpens decision-making and builds resilience —
@@ -104,7 +104,7 @@ const CorporatePowerPage = () => {
       <section style={{ backgroundColor: TEAL_DK }}>
         <div className="container cp-metrics" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '20px', padding: '30px 20px' }}>
           {[
-            ['1–2 Days', 'Custom intervention'],
+            ['Customized', 'Custom intervention'],
             ['Company-specific', 'Built around your goals'],
             ['Leadership + Teams', 'Every level engaged'],
             ['Experiential', 'Breakthrough exercises'],

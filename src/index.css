@@ -35,6 +35,16 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: capitalize;
 }
 
+/* A long unbreakable word (technical term, email, URL) must never widen the
+   viewport and cause a horizontal scrollbar on narrow screens. */
+h1, h2, h3, h4, h5, h6, p, li, a, span {
+  overflow-wrap: break-word;
+}
+
+img {
+  max-width: 100%;
+}
+
 a {
   text-decoration: none;
   color: inherit;

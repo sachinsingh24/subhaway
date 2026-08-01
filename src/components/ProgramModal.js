@@ -21,6 +21,7 @@ const ProgramModal = ({ program, onClose, onSelectProgram }) => {
       onClick={onClose}
     >
       <div
+        className="pm-panel"
         style={{
           background: '#ffffff',
           borderRadius: '24px',
@@ -72,6 +73,7 @@ const ProgramModal = ({ program, onClose, onSelectProgram }) => {
 
         {/* Key Attributes */}
         <div
+          className="pm-attrs"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(2, 1fr)',
@@ -135,7 +137,7 @@ const ProgramModal = ({ program, onClose, onSelectProgram }) => {
         </div>
 
         {/* Action Button */}
-        <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '12px' }}>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '12px', flexWrap: 'wrap' }}>
           <button onClick={onClose} className="btn-secondary" style={{ padding: '12px 24px' }}>
             Close
           </button>
@@ -150,6 +152,13 @@ const ProgramModal = ({ program, onClose, onSelectProgram }) => {
             <Sparkles size={16} /> Enroll / Inquire Now <ArrowRight size={16} />
           </button>
         </div>
+
+        <style>{`
+          @media (max-width: 640px) {
+            .pm-panel { padding: 24px 18px !important; }
+            .pm-attrs { grid-template-columns: 1fr !important; }
+          }
+        `}</style>
       </div>
     </div>
   );
