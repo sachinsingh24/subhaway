@@ -124,6 +124,19 @@ a {
   border-color: #94a3b8;
 }
 
+/* Outline button sitting on a dark hero. The default hover fills with a near-white
+   background, which would make white label text invisible — so tint instead. */
+.btn-outline-light {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-outline.btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
 /* Standard Card */
 .card {
   background: #ffffff;

@@ -88,7 +88,7 @@ const SuperStudentPage = () => {
             <Link to="/contact" className="btn-primary" style={{ backgroundColor: '#ffffff', color: DEEP, borderColor: '#ffffff' }}>
               Enrol / Enquire <ArrowRight size={16} />
             </Link>
-            <Link to="/services" className="btn-outline" style={{ color: '#ffffff', borderColor: 'rgba(255,255,255,0.5)' }}>
+            <Link to="/services" className="btn-outline btn-outline-light">
               <ArrowLeft size={16} /> All Services
             </Link>
           </div>
