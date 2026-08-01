@@ -4,6 +4,7 @@ import TopBar from './components/TopBar';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import BackToTopButton from './components/BackToTopButton';
 
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -41,6 +42,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <BackToTopButton />
       </div>
     </Router>
   );

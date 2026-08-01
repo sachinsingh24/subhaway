@@ -353,7 +353,7 @@ const MindPowerPage = () => {
             <Clock size={30} style={{ marginBottom: '12px' }} />
             <h3 style={{ color: '#ffffff', fontSize: '1.5rem', marginBottom: '10px' }}>Ready to write your blueprint?</h3>
             <p style={{ color: '#e0f2fe', lineHeight: 1.7, marginBottom: '22px' }}>
-              Join the next Transformation Mind Power Unlimited For Publick workshop and create a measurable internal shift.
+              Join the next Transformation Mind Power Unlimited For Public workshop and create a measurable internal shift.
             </p>
             <Link
               to="/contact"

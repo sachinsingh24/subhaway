@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Calendar, User, ChevronRight, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageBanner from "../components/PageBanner";
@@ -8,6 +8,12 @@ import MarkdownContent from "../components/MarkdownContent";
 
 const BlogPage = () => {
   const [selectedPost, setSelectedPost] = useState(null);
+
+  // Opening or closing an article swaps the view without changing the route, so
+  // the global ScrollToTop never fires — reset here instead.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [selectedPost]);
 
   const bannerTitle = selectedPost ? selectedPost.title : "Educational Blog & Insights";
   const bannerDescription = selectedPost ? selectedPost.excerpt : "Articles and practical guides authored by Mr. Subhash Wangde on mind power, student success, stress relief, and DMIT science.";

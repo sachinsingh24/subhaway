@@ -249,8 +249,37 @@ const HomePage = () => {
               </div>
             </div>
 
-            <div>
-              <span style={{ color: '#95346b', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase' }}>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              {/* The portrait is absolutely positioned so it adds no height of its own;
+                  its wrapper then grows into whatever the text below leaves spare, so
+                  this column finishes exactly level with the stats card beside it. */}
+              <div
+                style={{
+                  position: 'relative',
+                  flex: '1 1 auto',
+                  minHeight: '220px',
+                  borderRadius: '14px',
+                  overflow: 'hidden',
+                  marginBottom: '24px',
+                }}
+              >
+                <img
+                  src="/images/DSC_9897.jpg"
+                  alt="Mr. Subhash Wangde"
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    // Portrait shot — bias the crop upward so the face stays in frame.
+                    objectPosition: 'center 22%',
+                    display: 'block',
+                  }}
+                />
+              </div>
+
+              <span style={{ color: '#95346b', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', flexShrink: 0 }}>
                 Chief Counsellor
               </span>
               <h2 style={{ fontSize: '2rem', marginTop: '6px', marginBottom: '16px' }}>

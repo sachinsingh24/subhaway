@@ -8,9 +8,9 @@ const servicesData = [
   {
     id: 'mind-power',
     path: '/services/mind-power',
-    navLabel: 'Mind Power Unlimited For Publick for Public',
-    title: 'Mind Power Unlimited For Publick for Public',
-    shortTitle: 'Mind Power Unlimited For Publick for Public',
+    navLabel: 'Mind Power Unlimited For Public',
+    title: 'Mind Power Unlimited For Public',
+    shortTitle: 'Mind Power Unlimited For Public',
     icon: BookOpen,
     category: 'Public Workshop',
     accentColor: '#0ea5e9',

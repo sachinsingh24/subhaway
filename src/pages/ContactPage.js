@@ -27,7 +27,7 @@ const ContactPage = () => {
       a: 'You can submit the contact form on this page or call/WhatsApp us directly at +91 7875506912. Our academy team will provide available dates and registration details.',
     },
     {
-      q: 'Who should attend the Mind Power Unlimited For Publick workshop?',
+      q: 'Who should attend the Mind Power Unlimited For Public workshop?',
       a: 'Business Owners, Solopreneurs, Corporate Professionals, Housewives, Students, and Senior Citizens who wish to remove limiting beliefs and achieve peak success.',
     },
     {
@@ -56,29 +56,45 @@ const ContactPage = () => {
               display: 'grid',
               gridTemplateColumns: '1fr 1fr',
               gap: '40px',
-              alignItems: 'start',
+              alignItems: 'stretch',
             }}
             className="contact-grid"
           >
-            {/* Contact Details */}
-            <div>
-              <div className="card" style={{ padding: '0', overflow: 'hidden', marginBottom: '24px' }}>
+            {/* Chief Counsellor — left. The portrait flexes so this card ends
+                level with the academy column instead of overshooting it. */}
+            <div className="card" style={{ padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              {/* The photo is absolutely positioned so it contributes no height of its
+                  own. The wrapper then grows to whatever space the academy column
+                  leaves over, and both columns finish level. */}
+              <div style={{ position: 'relative', flex: '1 1 auto', minHeight: '320px' }}>
                 <img
                   src="/images/DSC_9897.jpg"
                   alt="Mr. Subhash Wangde speaking during a live session"
-                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    // Portrait shot — bias the crop upward so the face stays in frame.
+                    objectPosition: 'center 22%',
+                    display: 'block',
+                  }}
                 />
-                <div style={{ padding: '22px 24px' }}>
-                  <span style={{ color: '#95346b', fontWeight: 700, fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    Meet the Chief Counsellor
-                  </span>
-                  <h3 style={{ fontSize: '1.45rem', marginTop: '8px', marginBottom: '10px' }}>Mr. Subhash Wangde</h3>
-                  <p style={{ fontSize: '0.93rem', color: '#475569', lineHeight: 1.7 }}>
-                    Certified Mind Power Expert, success coach, and workshop leader guiding individuals, families, and organisations through practical transformation programs.
-                  </p>
-                </div>
               </div>
+              <div style={{ padding: '22px 24px', flexShrink: 0 }}>
+                <span style={{ color: '#95346b', fontWeight: 700, fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  Meet the Chief Counsellor
+                </span>
+                <h3 style={{ fontSize: '1.45rem', marginTop: '8px', marginBottom: '10px' }}>Mr. Subhash Wangde</h3>
+                <p style={{ fontSize: '0.93rem', color: '#475569', lineHeight: 1.7 }}>
+                  Certified Mind Power Expert, success coach, and workshop leader guiding individuals, families, and organisations through practical transformation programs.
+                </p>
+              </div>
+            </div>
 
+            {/* Academy details — right */}
+            <div>
               <h2 style={{ fontSize: '1.8rem', color: '#0f172a', marginBottom: '12px' }}>
                 Shubhaway Development Academy
               </h2>
@@ -126,137 +142,137 @@ const ContactPage = () => {
                 <SocialLinks />
               </div>
             </div>
+          </div>
 
-            {/* Contact Form */}
-            <div className="card">
-              {isSubmitted ? (
-                <div style={{ textAlign: 'center', padding: '30px 10px' }}>
-                  <div
-                    style={{
-                      width: '60px',
-                      height: '60px',
-                      borderRadius: '50%',
-                      backgroundColor: '#dcfce7',
-                      color: '#16a34a',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justify: 'center',
-                      margin: '0 auto 16px auto',
-                    }}
-                  >
-                    <CheckCircle2 size={32} />
-                  </div>
-                  <h3 style={{ fontSize: '1.5rem', marginBottom: '8px' }}>Thank You, {formData.name}!</h3>
-                  <p style={{ fontSize: '0.95rem', color: '#475569', marginBottom: '20px' }}>
-                    Your inquiry regarding <strong>{formData.program}</strong> has been received. Our team will contact you shortly.
-                  </p>
-                  <button
-                    onClick={resetForm}
-                    className="btn-outline"
-                  >
-                    Submit Another Inquiry
-                  </button>
+          {/* Contact Form — full width, directly below */}
+          <div className="card" style={{ maxWidth: '800px', margin: '48px auto 0' }}>
+            {isSubmitted ? (
+              <div style={{ textAlign: 'center', padding: '30px 10px' }}>
+                <div
+                  style={{
+                    width: '60px',
+                    height: '60px',
+                    borderRadius: '50%',
+                    backgroundColor: '#dcfce7',
+                    color: '#16a34a',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: '0 auto 16px auto',
+                  }}
+                >
+                  <CheckCircle2 size={32} />
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit}>
-                  <h3 style={{ fontSize: '1.4rem', color: '#0f172a', marginBottom: '20px' }}>
-                    Send Us an Inquiry
-                  </h3>
+                <h3 style={{ fontSize: '1.5rem', marginBottom: '8px' }}>Thank You, {formData.name}!</h3>
+                <p style={{ fontSize: '0.95rem', color: '#475569', marginBottom: '20px' }}>
+                  Your inquiry regarding <strong>{formData.program}</strong> has been received. Our team will contact you shortly.
+                </p>
+                <button
+                  onClick={resetForm}
+                  className="btn-outline"
+                >
+                  Submit Another Inquiry
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <h3 style={{ fontSize: '1.4rem', color: '#0f172a', marginBottom: '20px' }}>
+                  Send Us an Inquiry
+                </h3>
 
-                  <div className="form-group">
-                    <label>Full Name *</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      required
-                      placeholder="Enter your full name"
-                      value={formData.name}
-                      onChange={(e) => updateField('name', e.target.value)}
-                    />
-                  </div>
+                <div className="form-group">
+                  <label>Full Name *</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    required
+                    placeholder="Enter your full name"
+                    value={formData.name}
+                    onChange={(e) => updateField('name', e.target.value)}
+                  />
+                </div>
 
-                  <div className="form-group">
-                    <label>Phone / WhatsApp Number *</label>
-                    <input
-                      type="tel"
-                      className="form-control"
-                      required
-                      placeholder="+91 98765 43210"
-                      value={formData.phone}
-                      onChange={(e) => updateField('phone', e.target.value)}
-                    />
-                  </div>
+                <div className="form-group">
+                  <label>Phone / WhatsApp Number *</label>
+                  <input
+                    type="tel"
+                    className="form-control"
+                    required
+                    placeholder="+91 98765 43210"
+                    value={formData.phone}
+                    onChange={(e) => updateField('phone', e.target.value)}
+                  />
+                </div>
 
-                  <div className="form-group">
-                    <label>Email Address</label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      placeholder="you@example.com"
-                      value={formData.email}
-                      onChange={(e) => updateField('email', e.target.value)}
-                    />
-                  </div>
+                <div className="form-group">
+                  <label>Email Address</label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    placeholder="you@example.com"
+                    value={formData.email}
+                    onChange={(e) => updateField('email', e.target.value)}
+                  />
+                </div>
 
-                  <div className="form-group">
-                    <label>Program of Interest</label>
-                    <select
-                      className="form-control"
-                      value={formData.program}
-                      onChange={(e) => updateField('program', e.target.value)}
-                    >
-                      {contactPrograms.map((program) => (
-                        <option key={program} value={program}>
-                          {program === 'Signed Book Order: Small Steps, Big Growth' ? 'Book Order: Small Steps, Big Growth' : program}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
+                <div className="form-group">
+                  <label>Program of Interest</label>
+                  <select
+                    className="form-control"
+                    value={formData.program}
+                    onChange={(e) => updateField('program', e.target.value)}
+                  >
+                    {contactPrograms.map((program) => (
+                      <option key={program} value={program}>
+                        {program === 'Signed Book Order: Small Steps, Big Growth' ? 'Book Order: Small Steps, Big Growth' : program}
+                      </option>
+                    ))}
+                  </select>
+                </div>
 
-                  <div className="form-group">
-                    <label>Your Message / Specific Questions</label>
-                    <textarea
-                      className="form-control"
-                      rows={4}
-                      placeholder="Please enter any specific details or questions..."
-                      value={formData.message}
-                      onChange={(e) => updateField('message', e.target.value)}
-                    />
-                  </div>
+                <div className="form-group">
+                  <label>Your Message / Specific Questions</label>
+                  <textarea
+                    className="form-control"
+                    rows={4}
+                    placeholder="Please enter any specific details or questions..."
+                    value={formData.message}
+                    onChange={(e) => updateField('message', e.target.value)}
+                  />
+                </div>
 
-                  {errorMessage ? (
-                    <div
-                      role="alert"
-                      style={{
-                        padding: '12px 14px',
-                        borderRadius: '10px',
-                        backgroundColor: '#fef2f2',
-                        color: '#b91c1c',
-                        fontSize: '0.9rem',
-                        lineHeight: 1.5,
-                        marginBottom: '16px',
-                      }}
-                    >
-                      {errorMessage}
-                    </div>
-                  ) : null}
-
-                  <button
-                    type="submit"
-                    className="btn-primary"
-                    disabled={isSending}
+                {errorMessage ? (
+                  <div
+                    role="alert"
                     style={{
-                      width: '100%',
-                      justifyContent: 'center',
-                      opacity: isSending ? 0.8 : 1,
-                      cursor: isSending ? 'not-allowed' : 'pointer',
+                      padding: '12px 14px',
+                      borderRadius: '10px',
+                      backgroundColor: '#fef2f2',
+                      color: '#b91c1c',
+                      fontSize: '0.9rem',
+                      lineHeight: 1.5,
+                      marginBottom: '16px',
                     }}
                   >
-                    <Send size={16} /> {isSending ? 'Sending...' : 'Submit Inquiry'}
-                  </button>
-                </form>
-              )}
-            </div>
+                    {errorMessage}
+                  </div>
+                ) : null}
+
+                <button
+                  type="submit"
+                  className="btn-primary"
+                  disabled={isSending}
+                  style={{
+                    width: '100%',
+                    justifyContent: 'center',
+                    opacity: isSending ? 0.8 : 1,
+                    cursor: isSending ? 'not-allowed' : 'pointer',
+                  }}
+                >
+                  <Send size={16} /> {isSending ? 'Sending...' : 'Submit Inquiry'}
+                </button>
+              </form>
+            )}
           </div>
 
           {/* FAQ Accordion */}
@@ -280,7 +296,7 @@ const ContactPage = () => {
                       fontSize: '1rem',
                       color: '#0f172a',
                       display: 'flex',
-                      justify: 'space-between',
+                      justifyContent: 'space-between',
                       alignItems: 'center',
                       cursor: 'pointer',
                     }}
