@@ -168,7 +168,7 @@ const secretCards = [
   {
     file: 'secret-guiding-child.jpg',
     alt: 'A mother reading a picture book with her young daughter',
-    title: "And they have understood how to Condition the Child's Mind",
+    title: "They have understood how to Condition the Child's Mind",
   },
 ];
 
