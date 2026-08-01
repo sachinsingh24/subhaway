@@ -1,9 +1,9 @@
 import emailjs from '@emailjs/browser';
 
 const emailJsConfig = {
-  publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
-  serviceId: process.env.REACT_APP_EMAILJS_SERVICE_ID,
-  templateId: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+  publicKey: 'LA9Gw0BsRbLLYCkj4',
+  serviceId: 'service_x4io05t',
+  templateId: 'template_2dyd0dd',
 };
 
 const missingEmailJsConfig = Object.entries(emailJsConfig)
