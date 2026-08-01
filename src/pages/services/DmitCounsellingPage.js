@@ -42,6 +42,7 @@ const DEEP = '#7c2d12';
 
 // Diagrams and photographs taken from the academy's own DMIT brochure, self-hosted under /public.
 const img = (file) => `/images/services/${file}`;
+const local_img = (file) => `/images/services/${file}`;
 
 // Explanatory diagrams lifted from the brochure, sized to sit in one half of a two-column section.
 const sideDiagramStyle = {
@@ -274,7 +275,7 @@ const DmitCounsellingPage = () => {
       </section>
 
       {/* INTRODUCTION */}
-      <section className="section">
+      {/* <section className="section">
         <div className="container dm-two" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '46px', alignItems: 'center' }}>
           <div>
             <h2 style={{ fontSize: 'clamp(1.6rem, 3.4vw, 2rem)', color: DEEP, marginBottom: '18px' }}>Introduction</h2>
@@ -310,7 +311,7 @@ const DmitCounsellingPage = () => {
             </figcaption>
           </figure>
         </div>
-      </section>
+      </section> */}
 
       {/* THE SCIENCE — four pillars */}
       <section className="section" style={{ backgroundColor: DEEP, color: '#ffffff' }}>
@@ -642,7 +643,7 @@ const DmitCounsellingPage = () => {
           </div>
           <div className="dm-fitrow" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'stretch' }}>
             <img
-              src={img('steps-counselling-session.jpg')}
+              src={local_img('imaginebuddy-blocks-9164225_1920.jpg')}
               alt="Two people in a one-to-one counselling session across a table"
               style={{ ...sideDiagramStyle, aspectRatio: '3/2', objectFit: 'cover', alignSelf: 'start' }}
             />

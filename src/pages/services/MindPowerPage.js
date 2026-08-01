@@ -19,6 +19,8 @@ const DEEP = '#0c4a6e';
 
 // Relevant service imagery sourced from Pixabay (free to use, no attribution required)
 const img = (path) => `https://cdn.pixabay.com/photo/${path}_1280.jpg`;
+// Takes the full filename including extension, so both .jpg and .png assets work.
+const local_img = (file) => `/images/services/${file}`;
 
 const wishlist = [
   { icon: Wallet, text: 'Double your income and free up more of your time' },
@@ -120,8 +122,7 @@ const MindPowerPage = () => {
               </span>
             </h1>
             <p style={{ fontSize: '1.08rem', color: '#334155', lineHeight: 1.8, maxWidth: '560px' }}>
-              A transformational Transformation workshop that teaches timeless success principles and subconscious mind
-              techniques to take you from wherever you are now to wherever you want to be — faster than ever before.
+            A transformational workshop that teaches timeless success principles and subconscious mind techniques to help you go from where you are today to where you want to be—faster than ever before.
             </p>
             <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '28px' }}>
               <Link to="/contact" className="btn-primary" style={{ backgroundColor: SKY, borderColor: SKY }}>
@@ -135,7 +136,7 @@ const MindPowerPage = () => {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
             <img
-              src={img('2019/09/08/09/35/summit-4460519')}
+              src={local_img('mtajmr-touch-of-your-shadow-2245659_1920.jpg')}
               alt="Person reaching a mountain summit at sunrise"
               style={{ width: '100%', height: '260px', objectFit: 'cover', borderRadius: '18px', gridRow: 'span 2', boxShadow: '0 20px 45px rgba(2,132,199,0.22)' }}
             />
@@ -160,7 +161,7 @@ const MindPowerPage = () => {
           style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px', padding: '34px 20px' }}
         >
           {[
-            ['2-Day', 'Immersive workshop'],
+            ['Transformation', 'Immersive workshop'],
             ['10,000+', 'Lives touched across India'],
             ['All ages', 'Students to senior citizens'],
             ['100%', 'Experiential, hands-on practice'],
@@ -177,7 +178,7 @@ const MindPowerPage = () => {
       <section className="section">
         <div className="container mp-two" style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: '44px', alignItems: 'center' }}>
           <img
-            src={img('2022/05/22/07/39/climb-mountains-7212848')}
+            src={local_img('roszie-woman-7780330_1920.png')}
             alt="Climbing toward the top — growth mindset"
             style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', borderRadius: '20px', boxShadow: '0 16px 40px rgba(15,23,42,0.12)' }}
           />
