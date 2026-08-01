@@ -1,5 +1,14 @@
 # Getting Started with Create React App
 
+## EmailJS contact form setup
+
+The contact form now sends submissions through EmailJS.
+
+1. Copy `.env.example` to `.env.local`.
+2. Add your EmailJS values for `REACT_APP_EMAILJS_SERVICE_ID`, `REACT_APP_EMAILJS_TEMPLATE_ID`, and `REACT_APP_EMAILJS_PUBLIC_KEY`.
+3. Restart `npm start` after changing env values.
+4. In your EmailJS template, use these variables: `{{name}}`, `{{phone}}`, `{{email}}`, `{{program}}`, `{{message}}`, and `{{submitted_at}}`.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 import { Phone, Mail, Globe, Send, CheckCircle2, MessageSquare, ChevronDown, ChevronUp } from 'lucide-react';
+import { contactPrograms, defaultContactProgram } from '../data/contactPrograms';
+import { useContactForm } from '../hooks/useContactForm';
 
 const ContactSection = ({ selectedProgramFromState }) => {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    program: selectedProgramFromState || 'Mind Power Unlimited for Public',
-    message: '',
-  });
-
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [activeFaq, setActiveFaq] = useState(null);
+  const {
+    errorMessage,
+    formData,
+    handleSubmit,
+    isSending,
+    isSubmitted,
+    resetForm,
+    updateField,
+  } = useContactForm({
+    initialProgram: selectedProgramFromState || defaultContactProgram,
+    source: 'Homepage contact section',
+  });
 
   const faqs = [
     {
@@ -31,13 +36,6 @@ const ContactSection = ({ selectedProgramFromState }) => {
       a: 'Through customized 1-day or 2-day workshops ("Unleash the Power Within"), focusing on employee alignment, sales mastery, leadership decision making, and stress elimination.',
     },
   ];
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!formData.name || !formData.phone) return;
-    setIsSubmitted(true);
-  };
-
   return (
     <section id="contact" className="section-padding" style={{ background: '#ffffff', position: 'relative' }}>
       <div className="container">
@@ -218,10 +216,7 @@ const ContactSection = ({ selectedProgramFromState }) => {
                   Your inquiry for <strong>{formData.program}</strong> has been received. Mr. Subhash Wangde’s team will reach out to you within 24 hours.
                 </p>
                 <button
-                  onClick={() => {
-                    setIsSubmitted(false);
-                    setFormData({ name: '', phone: '', email: '', program: 'Mind Power Unlimited for Public', message: '' });
-                  }}
+                  onClick={resetForm}
                   className="btn-secondary"
                 >
                   Submit Another Inquiry
@@ -242,7 +237,7 @@ const ContactSection = ({ selectedProgramFromState }) => {
                     required
                     placeholder="Enter your full name"
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    onChange={(e) => updateField('name', e.target.value)}
                     style={{
                       width: '100%',
                       padding: '14px 18px',
@@ -264,7 +259,7 @@ const ContactSection = ({ selectedProgramFromState }) => {
                       required
                       placeholder="+91 98765 43210"
                       value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      onChange={(e) => updateField('phone', e.target.value)}
                       style={{
                         width: '100%',
                         padding: '14px 18px',
@@ -283,7 +278,7 @@ const ContactSection = ({ selectedProgramFromState }) => {
                       type="email"
                       placeholder="you@example.com"
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) => updateField('email', e.target.value)}
                       style={{
                         width: '100%',
                         padding: '14px 18px',
@@ -302,7 +297,7 @@ const ContactSection = ({ selectedProgramFromState }) => {
                   </label>
                   <select
                     value={formData.program}
-                    onChange={(e) => setFormData({ ...formData, program: e.target.value })}
+                    onChange={(e) => updateField('program', e.target.value)}
                     style={{
                       width: '100%',
                       padding: '14px 18px',
@@ -313,12 +308,11 @@ const ContactSection = ({ selectedProgramFromState }) => {
                       background: '#ffffff',
                     }}
                   >
-                    <option value="Mind Power Unlimited for Public">Mind Power Unlimited for Public</option>
-                    <option value="Super Student Unlimited">Super Student Unlimited</option>
-                    <option value="Unleash the Power Within for Corporates">Unleash the Power Within for Corporates</option>
-                    <option value="Stress Free Living Workshop">Stress Free Living Workshop</option>
-                    <option value="One-on-One Family Counselling using DMIT">One-on-One Family Counselling using DMIT</option>
-                    <option value="Signed Book Order: Small Steps, Big Growth">Book Order: Small Steps, Big Growth</option>
+                    {contactPrograms.map((program) => (
+                      <option key={program} value={program}>
+                        {program === 'Signed Book Order: Small Steps, Big Growth' ? 'Book Order: Small Steps, Big Growth' : program}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
@@ -330,7 +324,7 @@ const ContactSection = ({ selectedProgramFromState }) => {
                     rows={4}
                     placeholder="Tell us about your goals or questions..."
                     value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    onChange={(e) => updateField('message', e.target.value)}
                     style={{
                       width: '100%',
                       padding: '14px 18px',
@@ -343,8 +337,35 @@ const ContactSection = ({ selectedProgramFromState }) => {
                   />
                 </div>
 
-                <button type="submit" className="btn-primary" style={{ justifyContent: 'center', width: '100%', padding: '16px' }}>
-                  <Send size={18} /> Submit Consultation Request
+                {errorMessage ? (
+                  <div
+                    role="alert"
+                    style={{
+                      padding: '12px 14px',
+                      borderRadius: '12px',
+                      background: '#fef2f2',
+                      color: '#b91c1c',
+                      fontSize: '0.92rem',
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    {errorMessage}
+                  </div>
+                ) : null}
+
+                <button
+                  type="submit"
+                  className="btn-primary"
+                  disabled={isSending}
+                  style={{
+                    justifyContent: 'center',
+                    width: '100%',
+                    padding: '16px',
+                    opacity: isSending ? 0.8 : 1,
+                    cursor: isSending ? 'not-allowed' : 'pointer',
+                  }}
+                >
+                  <Send size={18} /> {isSending ? 'Sending...' : 'Submit Consultation Request'}
                 </button>
               </form>
             )}

@@ -73,7 +73,7 @@ const HomePage = () => {
                 }}
               />
               <p style={{ marginTop: '10px', fontSize: '0.9rem', color: '#64748b', fontWeight: 600 }}>
-                Mr. Subhash Wangde - Certified Mind Power Expert & Founder
+                Mr. Subhash Wangde - Certified Mind Power Trainer & Counsellor
               </p>
             </div>
           </div>
@@ -251,7 +251,7 @@ const HomePage = () => {
 
             <div>
               <span style={{ color: '#95346b', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase' }}>
-                Chief Counsellor & Master Coach
+                Chief Counsellor
               </span>
               <h2 style={{ fontSize: '2rem', marginTop: '6px', marginBottom: '16px' }}>
                 Mr. Subhash Wangde
@@ -267,7 +267,7 @@ const HomePage = () => {
                   <CheckCircle size={16} color="#95346b" /> Author of International Best-Selling Book "Small Steps, Big Growth"
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.9rem', color: '#334155' }}>
-                  <CheckCircle size={16} color="#95346b" /> DMIT Certified Family & Career Counselor
+                  <CheckCircle size={16} color="#95346b" /> DMIT Certified Family & Career Counsellor
                 </div>
               </div>
               <Link to="/about" className="btn-outline">

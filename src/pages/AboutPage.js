@@ -110,7 +110,7 @@ const AboutPage = () => {
         <div className="container">
           <div className="section-title">
             <h2>Meet Our Founder & Chief Counsellor</h2>
-            <p>Mr. Subhash Wangde — Certified Mind Power Trainer & International Business Coach</p>
+            <p>Mr. Subhash Wangde — Certified Mind Power Trainer & Counsellor</p>
           </div>
 
           <div

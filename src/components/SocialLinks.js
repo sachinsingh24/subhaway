@@ -1,5 +1,5 @@
 import React from 'react';
-import { socialLinks } from './TopBar';
+import { getSocialLinkProps, socialLinks } from '../data/socialLinks';
 
 // Reusable social icon row for light backgrounds (About, Contact pages).
 const SocialLinks = ({ size = 18 }) => {
@@ -18,12 +18,13 @@ const SocialLinks = ({ size = 18 }) => {
 
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-      {socialLinks.map(({ name, href, Icon }) => (
+      {socialLinks.map((link) => {
+        const { name, Icon } = link;
+
+        return (
         <a
           key={name}
-          href={href}
-          target="_blank"
-          rel="noreferrer"
+          {...getSocialLinkProps(link)}
           aria-label={name}
           title={name}
           style={base}
@@ -40,7 +41,8 @@ const SocialLinks = ({ size = 18 }) => {
         >
           <Icon size={size} />
         </a>
-      ))}
+        );
+      })}
     </div>
   );
 };

@@ -3,18 +3,23 @@ import { Phone, Mail, Globe, Send, CheckCircle2, ChevronDown, ChevronUp } from '
 import PageBanner from '../components/PageBanner';
 import pageBanners from '../data/pageBanners';
 import SocialLinks from '../components/SocialLinks';
+import { contactPrograms, defaultContactProgram } from '../data/contactPrograms';
+import { useContactForm } from '../hooks/useContactForm';
 
 const ContactPage = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    program: 'Mind Power Unlimited for Public',
-    message: '',
-  });
-
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [activeFaq, setActiveFaq] = useState(null);
+  const {
+    errorMessage,
+    formData,
+    handleSubmit,
+    isSending,
+    isSubmitted,
+    resetForm,
+    updateField,
+  } = useContactForm({
+    initialProgram: defaultContactProgram,
+    source: 'Contact page',
+  });
 
   const faqs = [
     {
@@ -34,13 +39,6 @@ const ContactPage = () => {
       a: 'Yes, Mr. Subhash Wangde conducts 1-day or 2-day corporate workshops ("Unleash the Power Within") customized for leadership and sales teams on-site across India.',
     },
   ];
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!formData.name || !formData.phone) return;
-    setIsSubmitted(true);
-  };
-
   return (
     <div>
       <PageBanner
@@ -153,10 +151,7 @@ const ContactPage = () => {
                     Your inquiry regarding <strong>{formData.program}</strong> has been received. Our team will contact you shortly.
                   </p>
                   <button
-                    onClick={() => {
-                      setIsSubmitted(false);
-                      setFormData({ name: '', phone: '', email: '', program: 'Mind Power Unlimited for Public', message: '' });
-                    }}
+                    onClick={resetForm}
                     className="btn-outline"
                   >
                     Submit Another Inquiry
@@ -176,7 +171,7 @@ const ContactPage = () => {
                       required
                       placeholder="Enter your full name"
                       value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      onChange={(e) => updateField('name', e.target.value)}
                     />
                   </div>
 
@@ -188,7 +183,7 @@ const ContactPage = () => {
                       required
                       placeholder="+91 98765 43210"
                       value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      onChange={(e) => updateField('phone', e.target.value)}
                     />
                   </div>
 
@@ -199,7 +194,7 @@ const ContactPage = () => {
                       className="form-control"
                       placeholder="you@example.com"
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) => updateField('email', e.target.value)}
                     />
                   </div>
 
@@ -208,14 +203,13 @@ const ContactPage = () => {
                     <select
                       className="form-control"
                       value={formData.program}
-                      onChange={(e) => setFormData({ ...formData, program: e.target.value })}
+                      onChange={(e) => updateField('program', e.target.value)}
                     >
-                      <option value="Mind Power Unlimited for Public">Mind Power Unlimited for Public</option>
-                      <option value="Super Student Unlimited">Super Student Unlimited</option>
-                      <option value="Unleash the Power Within for Corporates">Unleash the Power Within for Corporates</option>
-                      <option value="Stress Free Living Workshop">Stress Free Living Workshop</option>
-                      <option value="One-on-One Family Counselling using DMIT">One-on-One Family Counselling using DMIT</option>
-                      <option value="Signed Book Order: Small Steps, Big Growth">Book Order: Small Steps, Big Growth</option>
+                      {contactPrograms.map((program) => (
+                        <option key={program} value={program}>
+                          {program === 'Signed Book Order: Small Steps, Big Growth' ? 'Book Order: Small Steps, Big Growth' : program}
+                        </option>
+                      ))}
                     </select>
                   </div>
 
@@ -226,12 +220,39 @@ const ContactPage = () => {
                       rows={4}
                       placeholder="Please enter any specific details or questions..."
                       value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      onChange={(e) => updateField('message', e.target.value)}
                     />
                   </div>
 
-                  <button type="submit" className="btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-                    <Send size={16} /> Submit Inquiry
+                  {errorMessage ? (
+                    <div
+                      role="alert"
+                      style={{
+                        padding: '12px 14px',
+                        borderRadius: '10px',
+                        backgroundColor: '#fef2f2',
+                        color: '#b91c1c',
+                        fontSize: '0.9rem',
+                        lineHeight: 1.5,
+                        marginBottom: '16px',
+                      }}
+                    >
+                      {errorMessage}
+                    </div>
+                  ) : null}
+
+                  <button
+                    type="submit"
+                    className="btn-primary"
+                    disabled={isSending}
+                    style={{
+                      width: '100%',
+                      justifyContent: 'center',
+                      opacity: isSending ? 0.8 : 1,
+                      cursor: isSending ? 'not-allowed' : 'pointer',
+                    }}
+                  >
+                    <Send size={16} /> {isSending ? 'Sending...' : 'Submit Inquiry'}
                   </button>
                 </form>
               )}

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, Globe, ChevronRight } from 'lucide-react';
 import { servicesNavItems } from '../data/servicesData';
-import { socialLinks } from './TopBar';
+import { getSocialLinkProps, socialLinks } from '../data/socialLinks';
 
 const Footer = () => {
   return (
@@ -43,12 +43,13 @@ const Footer = () => {
             </p>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              {socialLinks.map(({ name, href, Icon }) => (
+              {socialLinks.map((link) => {
+                const { name, Icon } = link;
+
+                return (
                 <a
                   key={name}
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
+                  {...getSocialLinkProps(link)}
                   aria-label={name}
                   title={name}
                   style={{
@@ -74,7 +75,8 @@ const Footer = () => {
                 >
                   <Icon size={18} />
                 </a>
-              ))}
+                );
+              })}
             </div>
           </div>
 
