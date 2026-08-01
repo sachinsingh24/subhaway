@@ -695,8 +695,8 @@ const DmitCounsellingPage = () => {
             For any assistance, please call or WhatsApp:
           </p>
           <div style={{ display: 'flex', gap: '22px', flexWrap: 'wrap', justifyContent: 'center', fontSize: '0.95rem' }}>
-            <a href="tel:+919702376872" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#ffffff', fontWeight: 700 }}>
-              <Phone size={16} /> 97023 76872
+            <a href="tel:+917875506912" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#ffffff', fontWeight: 700 }}>
+              <Phone size={16} /> 78755 06912
             </a>
             <a href="mailto:subhash.wangde@gmail.com" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#ffffff', fontWeight: 700 }}>
               <Mail size={16} /> subhash.wangde@gmail.com

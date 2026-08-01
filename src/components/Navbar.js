@@ -44,7 +44,7 @@ const Navbar = () => {
           display: 'grid',
           gridTemplateColumns: 'auto 1fr auto',
           alignItems: 'center',
-          height: '76px',
+          height: 'auto',
           gap: '24px',
         }}
       >
