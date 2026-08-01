@@ -167,8 +167,8 @@ const MindPowerPage = () => {
             ['100%', 'Experiential, hands-on practice'],
           ].map(([big, small]) => (
             <div key={small} style={{ textAlign: 'center', minWidth: 0 }}>
-              {/* "Transformation" is a single 14-character word — it needs a fluid size
-                  and a break opportunity or it overflows its cell on narrow screens. */}
+              {/* These values are single words with no natural break point, so they need
+                  a fluid size and a break rule to stay inside their cell on narrow screens. */}
               <div
                 style={{
                   fontSize: 'clamp(1.4rem, 4.6vw, 1.9rem)',
