@@ -17,13 +17,22 @@ const HomePage = () => {
 
   return (
     <div>
-      <section className="home-hero-section" style={{ backgroundColor: '#ffffff', padding: '60px 0', borderBottom: '1px solid #e2e8f0' }}>
+      <section
+        className="home-hero-section"
+        style={{
+          // Soft brand-tinted ambience instead of flat white.
+          background:
+            'radial-gradient(900px 460px at 88% -10%, rgba(149,52,107,0.13), transparent 70%), linear-gradient(180deg, #ffffff 0%, #faf7f9 100%)',
+          padding: '60px 0',
+          borderBottom: '1px solid #e2e8f0',
+        }}
+      >
         <div className="container">
           <div
             style={{
               display: 'grid',
               gridTemplateColumns: '1fr 1fr',
-              gap: '40px',
+              gap: '48px',
               alignItems: 'center',
             }}
             className="hero-grid home-hero-grid"
@@ -31,22 +40,36 @@ const HomePage = () => {
             <div>
               <span
                 style={{
-                  display: 'inline-block',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '9px',
                   backgroundColor: '#f6e7f1',
                   color: '#7c2b59',
-                  fontSize: '0.85rem',
-                  fontWeight: '600',
-                  padding: '4px 12px',
-                  borderRadius: '4px',
-                  marginBottom: '16px',
+                  fontSize: '0.76rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.06em',
+                  textTransform: 'uppercase',
+                  padding: '8px 16px',
+                  borderRadius: '999px',
+                  border: '1px solid #eccbdf',
+                  marginBottom: '20px',
                 }}
               >
+                <span style={{ width: '7px', height: '7px', borderRadius: '50%', backgroundColor: '#95346b' }} />
                 Training | Coaching | Consulting | Counselling
               </span>
-              <h1 style={{ fontSize: '2.5rem', color: '#0f172a', marginBottom: '16px', lineHeight: 1.2 }}>
-                Shubhaway Development Academy
+              <h1
+                style={{
+                  fontSize: 'clamp(2rem, 4.2vw, 3.25rem)',
+                  color: '#0f172a',
+                  marginBottom: '18px',
+                  lineHeight: 1.14,
+                  letterSpacing: '-0.02em',
+                }}
+              >
+                <span style={{ color: '#95346b' }}>Shubhaway</span> Development Academy
               </h1>
-              <p style={{ fontSize: '1.1rem', color: '#475569', marginBottom: '28px', lineHeight: 1.6 }}>
+              <p style={{ fontSize: '1.08rem', color: '#475569', marginBottom: '30px', lineHeight: 1.75, maxWidth: '560px' }}>
                 Helping small business owners, corporate professionals, solopreneurs, and students unleash their highest potential through mind power techniques and structured personal coaching.
               </p>
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
@@ -59,22 +82,45 @@ const HomePage = () => {
               </div>
             </div>
 
-            <div className="home-hero-image" style={{ textAlign: 'center' }}>
-              <img
-                src="/images/DSC_9895 ready.jpg"
-                alt="Mr. Subhash Wangde - Founder"
+            <div className="home-hero-image" style={{ position: 'relative' }}>
+              {/* soft accent bloom behind the portrait */}
+              <div
+                aria-hidden="true"
                 style={{
-                  width: '100%',
-                  maxWidth: '100%',
-                  height: 'auto',
-                  borderRadius: '8px',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-                  border: '1px solid #cbd5e1',
+                  position: 'absolute',
+                  inset: '18px -14px -14px 18px',
+                  borderRadius: '28px',
+                  background: 'linear-gradient(140deg, rgba(149,52,107,0.16), rgba(197,47,51,0.10))',
+                  filter: 'blur(2px)',
                 }}
               />
-              <p style={{ marginTop: '10px', fontSize: '0.9rem', color: '#64748b', fontWeight: 600 }}>
-                Mr. Subhash Wangde - Certified Mind Power Trainer & Counsellor
-              </p>
+              <div
+                style={{
+                  position: 'relative',
+                  borderRadius: '24px',
+                  overflow: 'hidden',
+                  boxShadow: '0 26px 55px rgba(15,23,42,0.20)',
+                }}
+              >
+                <img src="/images/DSC_9895 ready.jpg" alt="Mr. Subhash Wangde - Founder" />
+                {/* caption sits on the image, so it can never overflow the column */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    padding: '46px 22px 18px',
+                    background: 'linear-gradient(to top, rgba(15,23,42,0.9) 30%, rgba(15,23,42,0))',
+                    color: '#ffffff',
+                  }}
+                >
+                  <p style={{ fontSize: '1.02rem', fontWeight: 800, lineHeight: 1.3 }}>Mr. Subhash Wangde</p>
+                  <p style={{ fontSize: '0.85rem', color: '#e2e8f0', marginTop: '3px' }}>
+                    Certified Mind Power Trainer &amp; Counsellor
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -367,8 +413,11 @@ const HomePage = () => {
         }
 
         .home-hero-image img {
+          display: block;
+          width: 100%;
           max-height: min(72dvh, 680px);
           object-fit: cover;
+          /* portrait source — keep the head in frame when the crop shortens */
           object-position: center top;
         }
 
@@ -387,8 +436,9 @@ const HomePage = () => {
             grid-template-columns: 1fr !important;
           }
 
+          /* Stacked: a 3:4 portrait at full width would run ~1000px tall, so cap it. */
           .home-hero-image img {
-            max-height: none;
+            max-height: 440px;
           }
         }
 
