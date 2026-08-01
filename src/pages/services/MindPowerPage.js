@@ -161,13 +161,24 @@ const MindPowerPage = () => {
           style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px', padding: '34px 20px' }}
         >
           {[
-            ['Transformation', 'Immersive workshop'],
+            ['Transform', 'Immersive workshop'],
             ['10,000+', 'Lives touched across India'],
             ['All ages', 'Students to senior citizens'],
             ['100%', 'Experiential, hands-on practice'],
           ].map(([big, small]) => (
-            <div key={small} style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '1.9rem', fontWeight: 800, color: '#7dd3fc' }}>{big}</div>
+            <div key={small} style={{ textAlign: 'center', minWidth: 0 }}>
+              {/* "Transformation" is a single 14-character word — it needs a fluid size
+                  and a break opportunity or it overflows its cell on narrow screens. */}
+              <div
+                style={{
+                  fontSize: 'clamp(1.4rem, 4.6vw, 1.9rem)',
+                  fontWeight: 800,
+                  color: '#7dd3fc',
+                  overflowWrap: 'break-word',
+                }}
+              >
+                {big}
+              </div>
               <div style={{ fontSize: '0.9rem', color: '#cbd5e1', marginTop: '4px' }}>{small}</div>
             </div>
           ))}
@@ -367,9 +378,15 @@ const MindPowerPage = () => {
       </section>
 
       <style>{`
+        /* Four stat columns stop fitting "Transformation" below ~1050px. */
+        @media (max-width: 1050px) {
+          .mp-stats { grid-template-columns: 1fr 1fr !important; }
+        }
         @media (max-width: 900px) {
           .mp-hero, .mp-two, .mp-cta { grid-template-columns: 1fr !important; }
-          .mp-stats { grid-template-columns: 1fr 1fr !important; }
+        }
+        @media (max-width: 560px) {
+          .mp-stats { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </div>
