@@ -67,7 +67,7 @@ const HomePage = () => {
                   letterSpacing: '-0.02em',
                 }}
               >
-                <span style={{ color: '#95346b' }}>Shubhaway</span> Development Academy
+                <span style={{ color: '#95346b' }}>ShubhaWay</span> Development Academy
               </h1>
               <p style={{ fontSize: '1.08rem', color: '#475569', marginBottom: '30px', lineHeight: 1.75, maxWidth: '560px' }}>
                 Helping small business owners, corporate professionals, solopreneurs, and students unleash their highest potential through mind power techniques and structured personal coaching.
